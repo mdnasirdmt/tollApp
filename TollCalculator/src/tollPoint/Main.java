@@ -1,7 +1,5 @@
 package tollPoint;
 
-import vehicleDetails.CollectToll;
-import vehicleDetails.Fastag;
 import vehicles.Bus;
 import vehicles.Car;
 import vehicles.Motorbike;
