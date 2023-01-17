@@ -1,21 +1,21 @@
 package tollPoint;
 
-public interface VehicleCharge {
+public class VehicleCharge {
 
-	int tollChargeTruck = 200;
+	static final int tollChargeTruck = 200;
 
-	int tollChargeBus = 200;
+	static final int tollChargeBus = 200;
 
-	int tollChargeVan = 100;
+	static final int tollChargeVan = 100;
 
-	int tollChargeCar = 100;
+	static final int tollChargeCar = 100;
 
-	int tollChargeRickshaw = 100;
+	static final int tollChargeRickshaw = 100;
 
-	int tollChargeScooter = 50;
+	static final int tollChargeScooter = 50;
 
-	int tollChargeMotorbike = 50;
+	static final int tollChargeMotorbike = 50;
 
-	int tollChargeFlatFee = 40;
+	static final int tollChargeFlatFee = 40;
 
 }

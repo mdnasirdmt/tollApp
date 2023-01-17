@@ -1,17 +1,13 @@
 package vehicles;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import vehicleDetails.Fastag;
 
 public class Truck {
-	
+
 	Fastag fastag;
 
 	public Truck() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public Truck(Fastag fastag) {
@@ -31,14 +27,5 @@ public class Truck {
 	public String toString() {
 		return "Truck [fastag=" + fastag + "]";
 	}
-
-	
-
-
-
-	
-
-	
-	
 
 }
