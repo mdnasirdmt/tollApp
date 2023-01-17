@@ -2,7 +2,11 @@ package input;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import tollPoint.ListOfFastagAndCollectToll;
 import vehicleDetails.CollectToll;
 import vehicleDetails.Fastag;
 import vehicles.Bus;
@@ -32,6 +36,9 @@ public class InputFromFile {
 
 		String[] inputData = str.split("\n");
 
+		List<Fastag> listFastags = new ArrayList<>();
+		List<CollectToll> listCollectTolls = new ArrayList<>();
+
 		for (int i = 0; i < inputData.length; i++) {
 
 			String[] vehicle = inputData[i].trim().split(" ");
@@ -47,7 +54,8 @@ public class InputFromFile {
 						Truck truck = new Truck();
 						Fastag fastag = new Fastag(vehicleNumber, fastagBalance);
 						truck.setFastag(fastag);
-						
+
+						listFastags.add(fastag);
 
 					} else if (vehicle[1].charAt(0) == 'B') {
 						String vehicleNumber = vehicle[1];
@@ -57,7 +65,7 @@ public class InputFromFile {
 						Fastag fastag = new Fastag(vehicleNumber, fastagBalance);
 
 						bus.setFastag(fastag);
-
+						listFastags.add(fastag);
 
 					} else if (vehicle[1].charAt(0) == 'V') {
 						String vehicleNumber = vehicle[1];
@@ -66,6 +74,8 @@ public class InputFromFile {
 						Van van = new Van();
 						Fastag fastag = new Fastag(vehicleNumber, fastagBalance);
 						van.setFastag(fastag);
+
+						listFastags.add(fastag);
 
 					} else if (vehicle[1].charAt(0) == 'C') {
 						String vehicleNumber = vehicle[1];
@@ -76,12 +86,17 @@ public class InputFromFile {
 
 						car.setFastag(fastag);
 
+						listFastags.add(fastag);
+
 					} else if (vehicle[1].charAt(0) == 'R') {
 						String vehicleNumber = vehicle[1];
 						int fastagBalance = Integer.parseInt(vehicle[2].trim());
 
 						Rickshaw rickshaw = new Rickshaw();
 						Fastag fastag = new Fastag(vehicleNumber, fastagBalance);
+						rickshaw.setFastag(fastag);
+
+						listFastags.add(fastag);
 
 					} else if (vehicle[1].charAt(0) == 'S') {
 						String vehicleNumber = vehicle[1];
@@ -91,6 +106,8 @@ public class InputFromFile {
 						Fastag fastag = new Fastag(vehicleNumber, fastagBalance);
 						scooter.setFastag(fastag);
 
+						listFastags.add(fastag);
+
 					} else if (vehicle[1].charAt(0) == 'M') {
 						String vehicleNumber = vehicle[1];
 						int fastagBalance = Integer.parseInt(vehicle[2]);
@@ -98,6 +115,8 @@ public class InputFromFile {
 						Motorbike motorbike = new Motorbike();
 						Fastag fastag = new Fastag(vehicleNumber, fastagBalance);
 						motorbike.setFastag(fastag);
+
+						listFastags.add(fastag);
 
 					}
 
@@ -108,11 +127,15 @@ public class InputFromFile {
 						String vehicleNumber = vehicle[2];
 						CollectToll tollT = new CollectToll(vehicleType, vehicleNumber);
 
+						listCollectTolls.add(tollT);
+
 					} else if (vehicle[1].charAt(0) == 'B') {
 
 						String vehicleType = vehicle[1];
 						String vehicleNumber = vehicle[2];
 						CollectToll tollB = new CollectToll(vehicleType, vehicleNumber);
+
+						listCollectTolls.add(tollB);
 
 					} else if (vehicle[1].charAt(0) == 'V') {
 //
@@ -120,11 +143,15 @@ public class InputFromFile {
 						String vehicleNumber = vehicle[2];
 						CollectToll tollV = new CollectToll(vehicleType, vehicleNumber);
 
+						listCollectTolls.add(tollV);
+
 					} else if (vehicle[1].charAt(0) == 'C') {
 
 						String vehicleType = vehicle[1];
 						String vehicleNumber = vehicle[2];
 						CollectToll tollC = new CollectToll(vehicleType, vehicleNumber);
+
+						listCollectTolls.add(tollC);
 
 					} else if (vehicle[1].charAt(0) == 'R') {
 
@@ -132,17 +159,23 @@ public class InputFromFile {
 						String vehicleNumber = vehicle[2];
 						CollectToll tollR = new CollectToll(vehicleType, vehicleNumber);
 
+						listCollectTolls.add(tollR);
+
 					} else if (vehicle[1].charAt(0) == 'S') {
 
 						String vehicleType = vehicle[1];
 						String vehicleNumber = vehicle[2];
 						CollectToll tollS = new CollectToll(vehicleType, vehicleNumber);
 
+						listCollectTolls.add(tollS);
+
 					} else if (vehicle[1].charAt(0) == 'M') {
 
 						String vehicleType = vehicle[1];
 						String vehicleNumber = vehicle[2];
 						CollectToll tollM = new CollectToll(vehicleType, vehicleNumber);
+
+						listCollectTolls.add(tollM);
 
 					}
 
@@ -151,9 +184,8 @@ public class InputFromFile {
 
 		}
 
-		
-		
-		
+		ListOfFastagAndCollectToll.listOfFastagAndCollectToll(listFastags, listCollectTolls);
+
 	}
 
 }
