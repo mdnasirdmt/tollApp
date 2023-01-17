@@ -1,15 +1,8 @@
 package input;
 
 import java.io.File;
-
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-
-import tollPoint.Main;
 import vehicleDetails.CollectToll;
 import vehicleDetails.Fastag;
 import vehicles.Bus;
