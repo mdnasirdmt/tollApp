@@ -21,7 +21,7 @@ public class InputFromFile {
 
 	public static void main(String[] args) throws IOException {
 
-		// pass the path to the file as a parameter
+		
 		File file = new File("input.txt");
 
 		Scanner scan = new Scanner(file);
