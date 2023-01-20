@@ -5,6 +5,8 @@ public class VehicleTypeSummary {
 	String vehicleType;
 
 	int vehiclePassedCount;
+	
+	
 
 }
 
